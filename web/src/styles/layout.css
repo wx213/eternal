@@ -1,0 +1,334 @@
+/* ============================================================
+   主布局：Rail Nav (68) + 列表列 (400) + 内容区
+   ============================================================ */
+.app-shell {
+  height: 100%;
+  display: flex;
+  background: var(--bg-app);
+  overflow: hidden;
+}
+
+/* ---------- Rail Nav ---------- */
+.rail {
+  width: 68px;
+  flex-shrink: 0;
+  background: #fff;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+}
+.rail-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-sub);
+  background: transparent;
+  flex-shrink: 0;
+}
+.rail-btn:hover {
+  background: var(--bg-fill);
+  color: var(--text);
+}
+.rail-btn.tinted {
+  background: var(--bg-fill);
+}
+.rail-btn.active {
+  background: var(--tg-blue);
+  color: #fff;
+}
+.rail-btn.active:hover {
+  background: var(--tg-blue-hover);
+  color: #fff;
+}
+.rail-btn.primary {
+  background: var(--tg-blue);
+  color: #fff;
+}
+.rail-btn.primary:hover {
+  background: var(--tg-blue-hover);
+}
+.rail-spacer {
+  flex: 1;
+}
+.rail-avatar {
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ---------- 列表列（会话 / 联系人共用） ---------- */
+.list-col {
+  width: 400px;
+  flex-shrink: 0;
+  background: #fff;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.list-header {
+  height: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+}
+.list-header.titled {
+  height: 60px;
+  padding: 0 16px 0 20px;
+}
+.list-header .list-title {
+  font-size: 20px;
+  font-weight: 700;
+  flex: 1;
+}
+.header-round-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--tg-blue-soft);
+  color: var(--tg-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.header-round-btn:hover {
+  background: var(--tg-blue-soft-2);
+}
+
+/* 搜索条 */
+.search-bar {
+  flex: 1;
+  height: 40px;
+  border-radius: var(--r-full);
+  background: var(--bg-fill);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  min-width: 0;
+}
+.search-bar:focus-within {
+  box-shadow: 0 0 0 2px rgba(51, 144, 236, 0.25) inset;
+}
+.search-bar .icon {
+  color: var(--text-muted);
+}
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  min-width: 0;
+}
+.search-bar input::placeholder {
+  color: var(--text-muted);
+}
+.search-wrap {
+  padding: 4px 16px 12px;
+  flex-shrink: 0;
+  display: flex;
+}
+
+/* 过滤标签 */
+.filter-tabs {
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--border);
+}
+.filter-tab {
+  height: 30px;
+  padding: 0 14px;
+  border-radius: var(--r-full);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-sub);
+  display: inline-flex;
+  align-items: center;
+}
+.filter-tab:hover {
+  background: var(--bg-fill);
+}
+.filter-tab.active {
+  background: var(--tg-blue);
+  color: #fff;
+}
+
+/* 滚动区 */
+.list-scroll {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* 会话行 */
+.conv-row {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+}
+.conv-row:hover {
+  background: var(--bg-hover);
+}
+.conv-row.active {
+  background: var(--tg-blue);
+}
+.conv-row .conv-avatar {
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+}
+.conv-row .conv-mid {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.conv-row .conv-line1 {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.conv-row .conv-name {
+  font-size: 15px;
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.conv-row .conv-time {
+  font-size: 12px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.conv-row .conv-line2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.conv-row .conv-msg {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  color: var(--text-sub);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.conv-badge {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 7px;
+  border-radius: var(--r-full);
+  background: var(--tg-blue);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.conv-row.active .conv-name,
+.conv-row.active .conv-time,
+.conv-row.active .conv-msg {
+  color: #fff;
+}
+.conv-row.active .conv-badge {
+  background: #fff;
+  color: var(--tg-blue);
+}
+
+/* 联系人分组字母 */
+.group-letter {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tg-blue);
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* 联系人行 */
+.contact-row {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+}
+.contact-row:hover {
+  background: var(--bg-hover);
+}
+.contact-row.active {
+  background: var(--tg-blue-soft);
+}
+.contact-row .contact-avatar {
+  width: 46px;
+  height: 46px;
+  font-size: 18px;
+}
+.contact-row .contact-mid {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.contact-row .contact-name {
+  font-size: 15px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.contact-row .contact-status {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.contact-row .contact-status.online {
+  color: var(--green);
+}
+
+/* 列表空态 */
+.list-empty {
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+

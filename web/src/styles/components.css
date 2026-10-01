@@ -1,0 +1,89 @@
+/* ================= 通用头像 ================= */
+.avatar {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible;
+  user-select: none;
+}
+.avatar > .txt {
+  line-height: 1;
+}
+.avatar .online-dot {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  background: var(--green);
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+
+/* ================= 按钮 ================= */
+.btn-primary {
+  padding: 11px 22px;
+  background: var(--tg-blue);
+  color: #fff;
+  border-radius: var(--r-md);
+  font-weight: 600;
+  font-size: 14px;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--tg-blue-hover);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn-block {
+  width: 100%;
+  display: block;
+}
+.btn-ghost {
+  padding: 10px 20px;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  border-radius: var(--r-md);
+  font-size: 14px;
+  font-weight: 500;
+}
+.btn-ghost:hover {
+  background: var(--bg-hover);
+}
+.btn-text {
+  color: var(--tg-blue);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: var(--r-sm);
+}
+.btn-text:hover {
+  background: var(--tg-blue-soft);
+}
+
+
+/* ---------- 危险操作按钮（重构新增） ---------- */
+.btn-danger {
+  height: 38px;
+  padding: 0 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--danger);
+  border: none;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+.btn-danger:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+.btn-danger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

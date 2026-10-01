@@ -1,0 +1,79 @@
+/* ================= 登录页 ================= */
+.auth-page {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3390ec 0%, #6a8ef0 55%, #9b72cf 100%);
+  padding: 24px;
+}
+.auth-card {
+  width: 400px;
+  background: #fff;
+  border-radius: var(--r-xl);
+  padding: 44px 36px;
+  box-shadow: var(--shadow-modal);
+}
+.auth-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--tg-blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.auth-card h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.auth-card .sub {
+  color: var(--text-sub);
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+.auth-card input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  font-size: 15px;
+  margin-bottom: 12px;
+  outline: none;
+  background: var(--bg-fill);
+  transition: all 0.15s;
+}
+.auth-card input:focus {
+  border-color: var(--tg-blue);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(51, 144, 236, 0.14);
+}
+.auth-card .btn-primary {
+  width: 100%;
+  margin-top: 6px;
+  padding: 13px;
+  font-size: 15px;
+}
+.auth-card .switch {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--text-sub);
+}
+.auth-card .switch a {
+  color: var(--tg-blue);
+  cursor: pointer;
+  font-weight: 500;
+}
+.auth-error {
+  color: var(--danger);
+  font-size: 13px;
+  margin-bottom: 12px;
+  padding: 9px 12px;
+  background: #fef2f2;
+  border-radius: var(--r-sm);
+}
+

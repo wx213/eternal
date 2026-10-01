@@ -1,0 +1,231 @@
+/* ============================================================
+   通讯录：详情列
+   ============================================================ */
+.detail-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-page);
+}
+.detail-topbar {
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+.detail-topbar .dt-title {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 600;
+}
+.detail-scroll {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 560px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+}
+.profile-card {
+  padding: 36px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.profile-card .big-avatar {
+  width: 104px;
+  height: 104px;
+  font-size: 42px;
+}
+.profile-card .big-avatar .online-dot {
+  width: 22px;
+  height: 22px;
+  right: 2px;
+  bottom: 2px;
+  border-width: 3px;
+}
+.profile-card .pc-name-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.profile-card .pc-name {
+  font-size: 24px;
+  font-weight: 700;
+}
+.profile-card .pc-status {
+  font-size: 14px;
+  color: var(--green);
+}
+.profile-card .pc-status.muted {
+  color: var(--text-muted);
+}
+.quick-actions {
+  display: flex;
+  gap: 14px;
+  padding-top: 6px;
+}
+.qa-item {
+  width: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+}
+.qa-item .qa-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--tg-blue-soft);
+  color: var(--tg-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.qa-item.primary .qa-circle {
+  background: var(--tg-blue);
+  color: #fff;
+}
+.qa-item:hover .qa-circle {
+  filter: brightness(0.96);
+}
+.qa-item .qa-label {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+.qa-item.primary .qa-label {
+  color: var(--tg-blue);
+}
+.qa-item:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.info-card,
+.action-card {
+  padding: 8px 20px;
+}
+.info-row {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.info-row:last-child {
+  border-bottom: none;
+}
+.info-row .ir-icon {
+  color: var(--text-sub);
+  width: 24px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.info-row .ir-mid {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.info-row .ir-value {
+  font-size: 15px;
+  word-break: break-word;
+}
+.info-row .ir-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.action-row {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-soft);
+  width: 100%;
+  background: transparent;
+  text-align: left;
+}
+.action-row:last-child {
+  border-bottom: none;
+}
+.action-row .ar-icon {
+  color: var(--text-sub);
+  width: 22px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.action-row .ar-label {
+  flex: 1;
+  font-size: 15px;
+}
+.action-row .ar-extra {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.action-row.danger .ar-icon,
+.action-row.danger .ar-label {
+  color: var(--danger);
+}
+.action-row.clickable {
+  cursor: pointer;
+}
+.action-row.clickable:hover .ar-label {
+  color: var(--tg-blue);
+}
+.action-row.danger.clickable:hover .ar-label {
+  color: var(--danger);
+  opacity: 0.8;
+}
+
+/* 开关 */
+.toggle {
+  width: 40px;
+  height: 24px;
+  border-radius: var(--r-full);
+  background: #d6dce3;
+  position: relative;
+  flex-shrink: 0;
+  transition: background 0.18s;
+}
+.toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.18s;
+}
+.toggle.on {
+  background: var(--tg-blue);
+}
+.toggle.on::after {
+  transform: translateX(16px);
+}
+

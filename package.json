@@ -1,0 +1,31 @@
+{
+  "name": "agentchat",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "IM 形态的多 Agent 对话平台（自包含 Agent 内核）",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:server dev:web",
+    "dev:server": "npm run dev --workspace=agentchat-server",
+    "dev:web": "npm run dev --workspace=agentchat-web",
+    "build": "npm run build --workspace=agentchat-server && npm run build --workspace=agentchat-web",
+    "typecheck": "npm run typecheck --workspace=agentchat-server && npm run typecheck --workspace=agentchat-web",
+    "start": "npm run start --workspace=agentchat-server"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "allowScripts": {
+    "argon2@0.41.1": true,
+    "better-sqlite3@11.10.0": true,
+    "esbuild@0.28.2": true,
+    "esbuild@0.25.12": true
+  }
+}

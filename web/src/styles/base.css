@@ -1,0 +1,115 @@
+/* ============================================================
+   AgentChat 设计系统 —— Telegram 风格（对齐 Ardot 设计稿）
+   ============================================================ */
+:root {
+  /* 主色 */
+  --tg-blue: #3390ec;
+  --tg-blue-hover: #2b7fd4;
+  --tg-blue-soft: #eaf4fe;
+  --tg-blue-soft-2: #d6e7f0;
+
+  /* 背景 */
+  --bg-app: #ffffff;
+  --bg-page: #f1f3f5;
+  --bg-chat: #d6e4f0;
+  --bg-fill: #f1f3f5;
+  --bg-hover: #f4f4f5;
+
+  /* 文本 */
+  --text: #1a1a2e;
+  --text-sub: #707991;
+  --text-muted: #a2acb8;
+
+  /* 描边 */
+  --border: #eaeef5;
+  --border-soft: #f1f3f5;
+
+  /* 语义色 */
+  --green: #4bb543;
+  --green-avatar: #6bcb77;
+  --danger: #e5484d;
+
+  /* 头像色板（设计稿取色） */
+  --av-blue: #3390ec;
+  --av-green: #6bcb77;
+  --av-indigo: #4d96ff;
+  --av-pink: #ff6b9d;
+  --av-purple: #9b72cf;
+  --av-orange: #ff8c42;
+
+  /* 阴影 */
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-md: 0 4px 14px rgba(16, 24, 40, 0.06);
+  --shadow-lg: 0 12px 32px rgba(16, 24, 40, 0.1);
+  --shadow-modal: 0 24px 64px rgba(16, 24, 40, 0.2);
+
+  /* 圆角 */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+  --r-full: 999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro SC', 'PingFang SC',
+    'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+  color: var(--text);
+  background: var(--bg-app);
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+  color: inherit;
+  transition: background 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 14px;
+  color: inherit;
+}
+
+/* ================= 滚动条 ================= */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(112, 121, 145, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(112, 121, 145, 0.45);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ================= 通用图标 ================= */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+

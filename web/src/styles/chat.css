@@ -1,0 +1,408 @@
+/* ============================================================
+   聊天窗口
+   ============================================================ */
+.chat-window {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-chat);
+}
+.chat-header {
+  height: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+.chat-header .peer-avatar {
+  width: 42px;
+  height: 42px;
+  font-size: 15px;
+}
+.chat-header .peer-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.chat-header .peer-name {
+  font-size: 16px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.chat-header .peer-status {
+  font-size: 13px;
+  color: var(--green);
+}
+.chat-header .peer-status.busy {
+  color: var(--tg-blue);
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.header-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-sub);
+}
+.header-icon-btn:hover {
+  background: var(--bg-fill);
+  color: var(--text);
+}
+
+/* 消息区 */
+.msg-area {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding: 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 1280px) {
+  .msg-area {
+    padding: 20px 40px;
+  }
+}
+
+.date-chip-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+.date-chip {
+  height: 26px;
+  padding: 0 12px;
+  border-radius: var(--r-full);
+  background: #8aaac8;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.msg-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+.msg-row.out {
+  justify-content: flex-end;
+}
+.msg-row .msg-avatar {
+  width: 34px;
+  height: 34px;
+  font-size: 13px;
+}
+.bubble {
+  max-width: min(560px, 72%);
+  padding: 8px 14px;
+  border-radius: var(--r-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  box-shadow: var(--shadow-sm);
+}
+.bubble.in {
+  background: #fff;
+  border-bottom-left-radius: 6px;
+}
+.bubble.out {
+  background: var(--tg-blue);
+  color: #fff;
+  border-bottom-right-radius: 6px;
+}
+.bubble .bubble-sender {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tg-blue);
+}
+.bubble .bubble-text {
+  font-size: 15px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.bubble .bubble-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+.bubble.out .bubble-meta {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* 工具调用轨迹 */
+.trace-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 2px;
+}
+.trace-chip {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--tg-blue);
+  background: var(--tg-blue-soft);
+  padding: 2px 8px;
+  border-radius: var(--r-full);
+}
+
+/* 输入中气泡 */
+.typing-bubble {
+  background: #fff;
+  border-radius: var(--r-lg);
+  border-bottom-left-radius: 6px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: var(--shadow-sm);
+}
+.typing-bubble i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  animation: typing 1.2s infinite ease-in-out;
+}
+.typing-bubble i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.typing-bubble i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+/* 快捷技能条 */
+.quick-prompts {
+  flex-shrink: 0;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 80px;
+  background: #fff;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 1280px) {
+  .quick-prompts {
+    padding: 10px 40px;
+  }
+}
+.qp-chip {
+  height: 32px;
+  padding: 0 14px;
+  border-radius: var(--r-full);
+  background: var(--tg-blue-soft);
+  color: var(--tg-blue);
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.qp-chip:hover {
+  background: var(--tg-blue-soft-2);
+}
+
+/* 输入栏 */
+.input-bar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 12px 80px;
+  background: #fff;
+}
+@media (max-width: 1280px) {
+  .input-bar {
+    padding: 12px 40px;
+  }
+}
+.input-box {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  border-radius: 22px;
+  background: var(--bg-fill);
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 0 16px;
+}
+.input-box .in-icon {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.input-box .in-icon:hover {
+  color: var(--tg-blue);
+}
+.input-box textarea {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  font-size: 15px;
+  line-height: 22px;
+  padding: 11px 0;
+  max-height: 132px;
+}
+.input-box textarea::placeholder {
+  color: var(--text-muted);
+}
+.send-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--tg-blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.send-btn:hover:not(:disabled) {
+  background: var(--tg-blue-hover);
+}
+.send-btn:disabled {
+  background: #c8d3e0;
+  cursor: not-allowed;
+}
+
+/* 聊天空态 */
+.chat-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px;
+  text-align: center;
+}
+.chat-empty .ce-icon {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--tg-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+.chat-empty .ce-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.chat-empty .ce-desc {
+  font-size: 14px;
+  color: var(--text-sub);
+  max-width: 380px;
+  line-height: 1.7;
+}
+
+
+/* ---------- 工具轨迹状态（重构新增） ---------- */
+.trace-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+}
+.trace-chip .tc-icon {
+  font-style: normal;
+  font-size: 10px;
+  line-height: 1;
+}
+.trace-chip.running {
+  color: var(--text-sub);
+  background: var(--bg-fill);
+}
+.trace-chip.running .tc-icon {
+  animation: tc-spin 0.9s linear infinite;
+}
+.trace-chip.failed {
+  color: var(--danger);
+  background: rgba(224, 74, 74, 0.1);
+}
+@keyframes tc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- 思维链折叠（重构新增） ---------- */
+.reasoning {
+  margin-bottom: 4px;
+}
+.reasoning-toggle {
+  font-size: 11px;
+  color: var(--text-sub);
+  background: var(--bg-fill);
+  border: none;
+  padding: 2px 8px;
+  border-radius: var(--r-full);
+  cursor: pointer;
+}
+.reasoning-toggle:hover {
+  color: var(--text);
+}
+.reasoning-text {
+  margin-top: 4px;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-sub);
+  background: var(--bg-fill);
+  border-radius: var(--r-md);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ---------- 消息内错误提示（重构新增） ---------- */
+.bubble-error {
+  margin-top: 4px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--danger);
+  word-break: break-word;
+}
